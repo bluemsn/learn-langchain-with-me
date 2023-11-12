@@ -85,9 +85,6 @@ pip install langchain==0.0.334 openai
 !pip install langchain==0.0.334 openai
 ```
 
-[Hello_Langchain.ipynb](./Hello_Langchain.ipynb)
-
-
 ```python
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage
@@ -104,7 +101,7 @@ print(response)
 你应该能看到类似这样的输出：
 
 ```shell
-content='Hello! How can I assist you today?' additional_kwargs={} example=False
+content='Hello! How can I assist you today？'
 ```
 
 或者 为了防止 api-key 泄露， `google-colab` 也提供了系统环境变更的设置，设置完成后， 你通过代码就可以直接调用，方便你分享你的代码，而不担心 `api-key` 的泄露；
@@ -152,18 +149,19 @@ content='Hello! How can I assist you today?' additional_kwargs={} example=False
 
 最后我们再看一下代码
 
-1、代码中导入了 `ChatOpenAI` 类，该类封装了OpenAI的聊天模型。
+### 1、代码中导入了 `ChatOpenAI` 类，该类封装了OpenAI的聊天模型。
 
-`ChatOpenAI` 类的初始化参数 
-`api_key` 设置 系统中的 api_key,否则你无法调用成功
-`temperature` 用于控制模型的生成文本的多样性。`temperature` 越大，生成的文本越多样，但也越不可控。`temperature` 越小，生成的文本越单一，但也越可控。`temperature` 的取值范围为 0 到 1，默认值为 0.5。初始化参数 
-`model_name` 用于指定使用的模型，这里我们选择使用 `gpt-3.5-turbo`; 你也可以使用其它模型；
+* `ChatOpenAI` 类的初始化参数 
 
-  ```python
-  chat = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-  ```
+  * `api_key` 设置 系统中的 api_key,否则你无法调用成功
+  * `temperature` 用于控制模型的生成文本的多样性。`temperature` 越大，生成的文本越多样，但也越不可控。`temperature` 越小，生成的文本越单一，但也越可控。`temperature` 的取值范围为 0 到 1，默认值为 0.5。初始化参数 
+  * `model_name` 用于指定使用的模型，这里我们选择使用 `gpt-3.5-turbo`; 你也可以使用其它模型；
 
-2、 以下代码完成与OpenAI GPT模型的第一次对话，并打印出响应。
+```python
+chat = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+```
+
+### 2、 以下代码完成与OpenAI GPT模型的第一次对话，并打印出响应。
 
   ```python
   response = chat([ HumanMessage(content="Hello Langchain!") ])
