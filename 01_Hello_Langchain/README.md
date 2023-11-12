@@ -140,7 +140,7 @@ print(response)
 运行后即可同样看到以下输出；
 
 ```shell
-content='Hello! How can I assist you today?' additional_kwargs={} example=False
+content='Hello! How can I assist you today？'
 ```
 
 ![hello_langchain03](./hello_langchain03.png)
@@ -169,8 +169,8 @@ chat = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
   ```
  
 ## 总结
-本节课程中，我们简要介绍了 `Langchain`，`OpenAI` 以及它们的关系，并完成了第一个 `Langchain` 应用 —— `Hello Langchain`。
+本节课程中，我们简要介绍了 `Langchain`，`OpenAI` 以及它们的关系，并完成了第一个 `Langchain` 应用 —— `Hello Langchain`, 如果对你有用可以关注本项目；
 
 ### 相关文档资料链接：
-[本课相关的代码](./Hello_Langchain.ipynb)
-1. [Python Langchain官方文档](https://python.langchain.com/docs/get_started/introduction.html) 
+* [本课相关的代码](./Hello_Langchain.ipynb)
+* [Python Langchain官方文档](https://python.langchain.com/docs/get_started/introduction.html) 
